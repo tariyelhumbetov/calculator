@@ -19,7 +19,7 @@ $(".num").on("click", function () {
 })
 
 $(".operator").on("click", function () {
-    if (!operant2) {
+    if (!operant2 && operant1) {
         operator = this.value
         $(".calc").html(operant1 + operator + operant2);
 
