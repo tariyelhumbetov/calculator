@@ -19,9 +19,11 @@ $(".num").on("click", function () {
 })
 
 $(".operator").on("click", function () {
-    operator = this.value
-    $(".calc").html(operant1 + operator + operant2);
+    if (!operant2) {
+        operator = this.value
+        $(".calc").html(operant1 + operator + operant2);
 
+    }
 
 })
 
@@ -41,16 +43,16 @@ $(".equal").on("click", function () {
     console.log(operant2);
     console.log(operator);
     if (operator == "/") {
-        cavab = parseInt(operant1)/parseInt(operant2);
+        cavab = parseInt(operant1) / parseInt(operant2);
         $(".result").html(cavab)
-    }else if(operator === "*") {
-        cavab = parseInt(operant1)*parseInt(operant2);
+    } else if (operator === "*") {
+        cavab = parseInt(operant1) * parseInt(operant2);
         $(".result").html(cavab)
-    }else if(operator==="+"){
-        cavab=parseInt(operant1)+parseInt(operant2);
+    } else if (operator === "+") {
+        cavab = parseInt(operant1) + parseInt(operant2);
         $(".result").html(cavab)
-    }else if(operator ==="-"){
-        cavab=parseInt(operant1)-parseInt(operant2);
+    } else if (operator === "-") {
+        cavab = parseInt(operant1) - parseInt(operant2);
         $(".result").html(cavab)
     }
 })
